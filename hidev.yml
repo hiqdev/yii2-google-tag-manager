@@ -1,0 +1,15 @@
+package:
+    type:           yii2-extension
+    name:           yii2-google-tag-manager
+    title:          Google Tag Manager widget for Yii2 applications
+    headline:       Yii2 Google Tag Manager
+    keywords:       yii2, plugin, google, tag, manager
+    description:    |
+        Provides really easy adding [Google Tag Manager] snippet to a site.
+        Even easier then adding a widget into a site layout.
+
+        Works by adding Behavior to the Application View.
+        Behavior listens to [EVENT_BEGIN_BODY] and echos the snippet.
+
+        [Google Tag Manager]: https://tagmanager.google.com/
+        [EVENT_BEGIN_BODY]: http://www.yiiframework.com/doc-2.0/yii-web-view.html#EVENT_BEGIN_BODY-detail
