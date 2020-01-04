@@ -1,21 +1,21 @@
 {
-    "name": "hiqdev/yii2-google-analytics",
+    "name": "hiqdev/yii2-google-tag-manager",
     "type": "yii2-extension",
-    "description": "Google Analytics tracking widget for Yii2 applications",
+    "description": "Google Tag Manager widget for Yii2 applications",
     "keywords": [
         "yii2",
         "plugin",
         "google",
-        "analytics",
-        "counter"
+        "tag",
+        "manager"
     ],
-    "homepage": "https://github.com/hiqdev/yii2-google-analytics",
+    "homepage": "https://github.com/hiqdev/yii2-google-tag-manager",
     "license": "BSD-3-Clause",
     "support": {
         "email": "support@hiqdev.com",
-        "source": "https://github.com/hiqdev/yii2-google-analytics",
-        "issues": "https://github.com/hiqdev/yii2-google-analytics/issues",
-        "wiki": "https://github.com/hiqdev/yii2-google-analytics/wiki",
+        "source": "https://github.com/hiqdev/yii2-google-tag-manager",
+        "issues": "https://github.com/hiqdev/yii2-google-tag-manager/issues",
+        "wiki": "https://github.com/hiqdev/yii2-google-tag-manager/wiki",
         "forum": "http://forum.hiqdev.com/"
     },
     "authors": [
