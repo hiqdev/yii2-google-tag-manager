@@ -17,6 +17,6 @@ Yii::$app = new \yii\console\Application([
     'id' => 'tests',
     'basePath' => dirname(__DIR__),
     'aliases' => [
-        '@hiqdev/yii2/GoogleAnalytics' => dirname(__DIR__) . '/src',
+        '@hiqdev/yii2/GoogleTagManager' => dirname(__DIR__) . '/src',
     ],
 ]);
