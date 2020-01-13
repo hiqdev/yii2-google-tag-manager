@@ -45,12 +45,15 @@
         }
     ],
     "require-dev": {
+        "yiisoft/yii2": "~2.0.0",
         "hiqdev/hidev-php": "dev-master",
-        "hiqdev/hidev-hiqdev": "dev-master"
+        "hiqdev/hidev-hiqdev": "dev-master",
+        "phpunit/phpunit": "^7.4"
     },
     "autoload": {
         "psr-4": {
-            "hiqdev\\yii2\\GoogleTagManager\\": "src"
+            "hiqdev\\yii2\\GoogleTagManager\\": "src",
+            "hiqdev\\yii2\\GoogleTagManager\\tests\\": "tests"
         }
     },
     "extra": {
