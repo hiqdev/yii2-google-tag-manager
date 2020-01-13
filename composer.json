@@ -50,7 +50,8 @@
     },
     "autoload": {
         "psr-4": {
-            "hiqdev\\yii2\\GoogleTagManager\\": "src"
+            "hiqdev\\yii2\\GoogleTagManager\\src\\": "src",
+            "hiqdev\\yii2\\GoogleTagManager\\tests\\": "tests"
         }
     },
     "extra": {
