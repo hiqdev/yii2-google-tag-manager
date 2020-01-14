@@ -37,14 +37,23 @@ class Behavior extends \yii\base\Behavior
     }
 
     /**
-     * @return string[]
+     * @inheritDoc
      */
     public function events(): array
     {
         return [
             View::EVENT_BEGIN_PAGE => 'onBeginPage',
-            View::EVENT_END_BODY => 'onEndBody',
+            View::EVENT_BEGIN_BODY => 'onBeginBody',
+            View::EVENT_END_PAGE => 'onEndPage',
         ];
+    }
+
+    /**
+     * @param Event $event
+     */
+    public function onBeginBody(Event $event): void
+    {
+        echo $this->getBuilder()->render('body');
     }
 
     /**
@@ -52,15 +61,18 @@ class Behavior extends \yii\base\Behavior
      */
     public function onBeginPage(Event $event): void
     {
-        echo $this->getBuilder()->render('head');
+        ob_start();
     }
 
     /**
      * @param Event $event
      */
-    public function onEndBody(Event $event): void
+    public function onEndPage(Event $event): void
     {
-        echo $this->getBuilder()->render('body');
+        $page = ob_get_clean();
+        preg_match('/<\s*(head|HEAD)[^>]*>/', $page, $output, PREG_OFFSET_CAPTURE);
+        $pastePoint = $output[0][1] + strlen($output[0][0]);
+        echo substr_replace($page, $this->getBuilder()->render('head'), $pastePoint, 0);
     }
 
     /**
