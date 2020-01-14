@@ -71,6 +71,9 @@ class Behavior extends \yii\base\Behavior
     {
         $page = ob_get_clean();
         preg_match('/<\s*(head|HEAD)[^>]*>/', $page, $output, PREG_OFFSET_CAPTURE);
+        if (empty($output)) {
+            return;
+        }
         $pastePoint = $output[0][1] + strlen($output[0][0]);
         echo substr_replace($page, $this->getBuilder()->render('head'), $pastePoint, 0);
     }
