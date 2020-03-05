@@ -17,6 +17,24 @@ Behavior listens to [EVENT_BEGIN_BODY] and echos the snippet.
 [Google Tag Manager]: https://tagmanager.google.com/
 [EVENT_BEGIN_BODY]: http://www.yiiframework.com/doc-2.0/yii-web-view.html#EVENT_BEGIN_BODY-detail
 
+## Installation
+
+The preferred way to install this yii2-extension is through [composer](http://getcomposer.org/download/).
+
+Either run
+
+```sh
+php composer.phar require "hiqdev/yii2-google-tag-manager"
+```
+
+or add
+
+```json
+"hiqdev/yii2-google-tag-manager": "*"
+```
+
+to the require section of your composer.json.
+
 ## Configuration
 
 This extension is supposed to be used with [composer-config-plugin].
