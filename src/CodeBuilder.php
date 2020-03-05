@@ -19,7 +19,7 @@ use Yii;
 class CodeBuilder extends \yii\base\BaseObject
 {
     /**
-     * @var string
+     * @var string|array
      */
     public $id;
 
@@ -42,31 +42,44 @@ class CodeBuilder extends \yii\base\BaseObject
      */
     public function render(string $fileName): string
     {
-        if ($this->id === null) {
-            return '';
+        $res = '';
+        foreach ($this->getIds() as $id) {
+            if (empty($id)) {
+                continue;
+            }
+            $res .= $this->getView()->render("@hiqdev/yii2/GoogleTagManager/views/$fileName.php", $this->prepareData($id));
         }
 
-        return $this->getView()->render("@hiqdev/yii2/GoogleTagManager/views/$fileName.php", $this->prepareData());
+        return $res;
     }
 
     /**
      * @return array
      */
-    private function prepareData(): array
+    private function prepareData(string $id): array
     {
         return [
-            'id' => $this->id,
-            'params' => $this->prepareParams(),
+            'id' => $id,
+            'params' => $this->prepareParams($id),
         ];
     }
 
     /**
      * @return array
      */
-    private function prepareParams(): array
+    private function prepareParams($id): array
     {
         return array_filter(array_merge($this->params, [
-            'id' => $this->id,
+            'id' => $id,
         ]));
+    }
+
+    public function getIds(): array
+    {
+        if (is_array($this->id)) {
+            return $this->id;
+        }
+
+        return explode(',', (string)$this->id);
     }
 }

@@ -27,7 +27,7 @@ class CodeBuilderTest extends \PHPUnit\Framework\TestCase
     /**
      * @var string
      */
-    protected $id = 'UA-1234567890-1';
+    protected $id = 'GTM-1234567,GTM-7654321';
 
     /**
      * @var array
