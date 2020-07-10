@@ -47,7 +47,7 @@ class CodeBuilder extends \yii\base\BaseObject
             if (empty($id)) {
                 continue;
             }
-            $res .= $this->getView()->render("@hiqdev/yii2/GoogleTagManager/views/$fileName.php", $this->prepareData($id));
+            $res .= $this->getView()->renderFile(__DIR__ . "/views/$fileName.php", $this->prepareData($id));
         }
 
         return $res;
